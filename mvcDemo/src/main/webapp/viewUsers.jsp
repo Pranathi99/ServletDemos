@@ -8,8 +8,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:forEach var="student" items="${student_list}">
-		${student}<br/>
-	</c:forEach>
+		<table border="2">
+		<tr>
+			<th>FirstName</th>
+			<th>LastName</th>
+			<th>Email</th>
+		</tr>
+		<c:forEach var="user" items="${user_list}">
+			<tr>
+				<td>${user.fname}</td>
+				<td>${user.lname}</td>
+				<td>${user.email}</td>
+			</tr>
+		</c:forEach>
+	</table>
 </body>
 </html>
