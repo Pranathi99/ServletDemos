@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Student List</title>
 </head>
 <body>
 		<table border="2">
@@ -17,10 +17,11 @@
 		</tr>
 		<c:forEach var="student" items="${student_list}">
 			<tr>
-				<td>${student.id}</td>
+				<td><a href="loadStudent?studentId=${student.id}">${student.id}</td>
 				<td>${student.fname}</td>
 				<td>${student.lname}</td>
 				<td>${student.email}</td>
+				<td><a href="deleteStudent?studentId=${student.id}">Delete</td>
 			</tr>
 		</c:forEach>
 	</table>
