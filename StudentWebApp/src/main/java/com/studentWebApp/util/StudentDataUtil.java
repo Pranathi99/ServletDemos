@@ -118,7 +118,6 @@ public class StudentDataUtil {
 			rs=st.executeQuery();
 			while(rs.next())
 			{
-				System.out.println("here");
 				int std_id=rs.getInt("id");
 				String std_fname=rs.getString("first_name");
 				String std_lname=rs.getString("last_name");
@@ -134,6 +133,29 @@ public class StudentDataUtil {
 			close(conn,st,rs);
 		}
 		return std;		
+	}
+
+	public void addStudent(String fname, String lname, String email) {
+		Connection conn=null; 
+		PreparedStatement st=null;
+		ResultSet rs=null;
+		try {
+			conn=ds.getConnection();
+			String sql="insert into student (first_name, last_name, email) values (?,?,?)";
+			st=conn.prepareStatement(sql);
+			st.setString(1, fname);
+			st.setString(2, lname);
+			st.setString(3, email);
+			st.execute();
+		}
+		catch(SQLException ex)
+		{
+			ex.printStackTrace();
+		}
+		finally {
+			close(conn,st,rs);
+		}
+		
 	}
 
 }

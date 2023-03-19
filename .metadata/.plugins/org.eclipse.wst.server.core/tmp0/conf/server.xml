@@ -152,7 +152,9 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\Users\prganti\Desktop\SimpliLearn-Java\Servlets\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\prganti\Desktop\SimpliLearn-Java\Servlets\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\StudentWebApp" path="/StudentWebApp" reloadable="true" source="org.eclipse.jst.jee.server:StudentWebApp"/></Host>
+      <Context docBase="C:\Users\prganti\Desktop\SimpliLearn-Java\Servlets\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\prganti\Desktop\SimpliLearn-Java\Servlets\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\StudentWebApp" path="/StudentWebApp" reloadable="true" source="org.eclipse.jst.jee.server:StudentWebApp">
+ <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxActive="20" maxIdle="5" maxWait="10000" name="jdbc/studentweb" password="root1234" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/studentweb" username="root"/>
+</Context></Host>
     </Engine>
   </Service>
 </Server>
